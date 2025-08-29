@@ -145,9 +145,7 @@ Asegúrate de que tu Security Group tenga estas reglas:
 ```
 tests/
 ├── __init__.py
-├── test_basic.py      # Tests básicos
-├── test_models.py     # Tests de modelos (opcional)
-└── test_views.py      # Tests de vistas (opcional)
+└── test_basic.py      # Tests básicos
 ```
 
 ### 🚨 Si los tests fallan:
