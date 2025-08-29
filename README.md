@@ -1,4 +1,4 @@
-# Guía de Desarrollo - Cloud Computing 29-08-25
+# Guía de Desarrollo - Cloud Computing
 
 ![AWS EC2](https://img.shields.io/badge/deploy-AWS%20EC2-orange?logo=amazon-aws)
 ![Django CI](https://github.com/chalonov/weather-app-django-ec2/workflows/Django%20CI/badge.svg)
