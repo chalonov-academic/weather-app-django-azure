@@ -1,4 +1,4 @@
-# Guía de Desarrollo - Django en AWS (EC2)
+# Guía de Desarrollo - Cloud Computing
 
 ![AWS EC2](https://img.shields.io/badge/deploy-AWS%20EC2-orange?logo=amazon-aws)
 ![Django CI](https://github.com/chalonov/weather-app-django-ec2/workflows/Django%20CI/badge.svg)
@@ -21,34 +21,6 @@ Consulta la API gratuita de Open-Meteo para datos meteorológicos actuales
 Presenta los resultados en una interfaz web limpia con ciudad, país y temperatura
 
 **Ideal para:** Curiosear sobre el clima mundial o verificar rápidamente la temperatura local sin apps adicionales.
-
-## 🤖 Automatización con GitHub Actions
-
-### ✅ ¿Qué se automatiza?
-- **Tests automáticos:** Se ejecutan cada vez que haces push
-- **Validación de código:** Verifica sintaxis Python
-- **Checks de Django:** Valida configuración del proyecto
-- **Verificación de migraciones:** Asegura que no falten migraciones
-
-### 🔄 ¿Cuándo se ejecuta?
-- Cada push a la rama `main`
-- Cada Pull Request
-- Manualmente desde GitHub
-
-### 📊 Estado actual:
-El badge de arriba te muestra si los tests están pasando ✅ o fallando ❌
-
-### 🧪 Ejecutar tests localmente:
-```bash
-# Activar entorno virtual
-source .venv/bin/activate
-
-# Ejecutar todos los tests
-python manage.py test
-
-# Ejecutar tests específicos
-python manage.py test tests.test_basic
-```
 
 ## 📋 Requisitos Previos
 
@@ -135,7 +107,33 @@ Asegúrate de que tu Security Group tenga estas reglas:
 | SSH | 22 | Tu IP o 0.0.0.0/0 | Acceso SSH |
 | TCP Personalizado | 8000 | 0.0.0.0/0 | Servidor desarrollo |
 
-## 🔧 Para Desarrolladores
+## 🤖 Automatización con GitHub Actions
+
+### ✅ ¿Qué se automatiza?
+- **Tests automáticos:** Se ejecutan cada vez que haces push
+- **Validación de código:** Verifica sintaxis Python
+- **Checks de Django:** Valida configuración del proyecto
+- **Verificación de migraciones:** Asegura que no falten migraciones
+
+### 🔄 ¿Cuándo se ejecuta?
+- Cada push a la rama `main`
+- Cada Pull Request
+- Manualmente desde GitHub
+
+### 📊 Estado actual:
+El badge de arriba te muestra si los tests están pasando ✅ o fallando ❌
+
+### 🧪 Ejecutar tests localmente:
+```bash
+# Activar entorno virtual
+source .venv/bin/activate
+
+# Ejecutar todos los tests
+python manage.py test
+
+# Ejecutar tests específicos
+python manage.py test tests.test_basic
+```
 
 ### 🧪 Agregar nuevos tests:
 1. Crea archivos en la carpeta `tests/`
