@@ -10,7 +10,7 @@ class BasicFunctionalityTest(TestCase):
 
     def test_basic_math(self):
         """Test básico para verificar que los tests funcionan"""
-        self.assertEqual(1 + 1, 3) # FALLA INTENCIONALMENTE
+        #self.assertEqual(1 + 1, 3) # FALLA INTENCIONALMENTE
         self.assertEqual(1 + 1, 2)
         self.assertEqual(2 * 3, 6)
 
