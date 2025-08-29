@@ -17,7 +17,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: '3.8'
 
     - name: Install dependencies
       run: |
@@ -28,9 +28,13 @@ jobs:
       run: |
         python manage.py check
 
-    - name: Create database migrations
+    - name: Generate migrations if needed
       run: |
-        python manage.py makemigrations --dry-run --check
+        python manage.py makemigrations
+
+    - name: Apply migrations
+      run: |
+        python manage.py migrate
 
     - name: Run tests
       run: |
