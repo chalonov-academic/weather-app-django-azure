@@ -1,5 +1,6 @@
 # Guía de Desarrollo - Django en AWS (EC2)
 
+![AWS EC2](https://img.shields.io/badge/deploy-AWS%20EC2-orange?logo=amazon-aws)
 ![Django CI](https://github.com/chalonov/weather-app-django-ec2/workflows/Django%20CI/badge.svg)
 
 ## ☀️ Climante - Weather App Django
