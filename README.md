@@ -2,6 +2,7 @@
 
 ![AWS EC2](https://img.shields.io/badge/deploy-AWS%20EC2-orange?logo=amazon-aws)
 ![Django CI](https://github.com/chalonov/weather-app-django-ec2/workflows/Django%20CI/badge.svg)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
 
 ## ☀️ Climante - Weather App Django
 
