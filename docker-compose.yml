@@ -1,0 +1,59 @@
+# docker-compose.yml para Weather App Django
+version: '3.8'
+
+services:
+  weather-app:
+    build: .
+    container_name: climante-weather-app
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    
+    # Variables de entorno para Django
+    environment:
+      - DJANGO_DEBUG=False
+      - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+      - PYTHONPATH=/app
+    
+    # Volumen para persistir datos de SQLite (opcional)
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3
+    
+    # Health check para verificar que Django responde
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    labels:
+      - "com.example.description=Climante Weather App - Django"
+      - "com.example.version=1.0"
+      - "com.example.group=weather-services"
+
+  # Servicio adicional para desarrollo (opcional)
+  # Nginx proxy reverso para servir archivos estáticos
+  nginx:
+    image: nginx:alpine
+    container_name: climante-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./staticfiles:/usr/share/nginx/html/static:ro
+    depends_on:
+      - weather-app
+    restart: unless-stopped
+    profiles:
+      - production  # Solo se ejecuta con: docker-compose --profile production up
+
+# Red personalizada (opcional)
+networks:
+  weather-network:
+    driver: bridge
+
+# Volúmenes persistentes
+volumes:
+  weather-db:
+    driver: local
