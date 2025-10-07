@@ -8,7 +8,7 @@
 
 Esta aplicación web de clima tiene dos funcionalidades principales:
 
-### 🌍 Temperatura en Cualquier Lugar
+### 🌍 Temperatura en Cualquier Lugar.
 Selecciona una ciudad aleatoria del mundo desde una base de datos de ciudades globales
 Muestra la temperatura actual de esa ubicación usando la API de Open-Meteo
 
